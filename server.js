@@ -1,24 +1,28 @@
 //modules
-var http = require("http");
-//var express = require("express");
-//var app = express();
-//var bodyParser = require("bodyParser");
-//var methodOverride = require("methodOverride");
+var express = require("express");
+var app = express();
+var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
 
 //config
 
-//var db = require('./')
+var db = require('./config/db');
 
-function start() {
-  function onRequest(request, response) {
-  	console.log("request recieved");
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
-    response.end();
-  }
+var port = process.env.PORT || 8888;
 
-  http.createServer(onRequest).listen(8888);
-  console.log("Server has started.");
-}
+//Setting up express-application
 
-exports.start = start;
+app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('X-HTTP-Method-Override')); 
+app.use(express.static(__dirname + '/public'));
+
+//configure routes
+require('./app/routes')(app);
+
+console.log('Magic happens on port ' + port);
+
+app.listen(port);
+
+exports = module.exports = app;
