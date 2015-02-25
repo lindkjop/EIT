@@ -1,0 +1,41 @@
+.navbar-custom {
+  background-color:#3a3a3a;
+    color:#c4d5db;
+    border-radius:0;
+}
+/* Not active */
+.navbar-custom .navbar-nav > li > a {
+    color:#c4d5db;
+    padding-left:40px;
+    padding-right:40px;
+    
+    border-left-color:  #413c44;
+}
+/* Active */
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+  background-color:transparent;
+}
+
+/* Hovering *//*
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #66CCFF;
+}*/
+      
+.navbar-custom .navbar-brand {
+    color:#c4d5db;
+    background-color: #c74f3d;
+    padding-left:40px;
+    padding-right:40px;
+
+}
+.navbar-custom .navbar-toggle {
+    background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+    background-color:#33aa33;
+
+}
+
+
