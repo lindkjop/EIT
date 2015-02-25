@@ -9,6 +9,13 @@ var methodOverride = require("method-override");
 var db = require('./config/db');
 
 var port = process.env.PORT || 8888;
+var router = express.Router();
+
+//say that all routes shall start with /api
+app.use('/api', router);
+
+//configure routes
+require('./app/routes')(app, router);
 
 //Setting up express-application
 
@@ -18,8 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override')); 
 app.use(express.static(__dirname + '/public'));
 
-//configure routes
-require('./app/routes')(app);
+
 
 console.log('Magic happens on port ' + port);
 
