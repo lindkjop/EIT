@@ -1,4 +1,4 @@
-var testModel = require('./models/testModel');
+var bookModel = require('./models/bookModel');
 
 module.exports = function(app) {
 	//Write backend routes here
