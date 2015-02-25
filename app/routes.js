@@ -1,9 +1,19 @@
-var bookModel = require('./models/bookModel');
+var book = require('./models/book');
+var article = require('./models/article');
 
 module.exports = function(app) {
-	//Write backend routes here
+	//Server routes here
 
-	//frontend routes - just one for now
+	//Api routes
+	app.get('/api/books', function(request, response){
+
+	})
+
+	//frontend routes
+	app.get('*', function(request, response){
+		response.sendfile('./public/views/index.html');
+	});
+
 	app.get('*', function(request, response){
 		response.sendfile('./public/views/index.html');
 	});
