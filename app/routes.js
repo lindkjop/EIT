@@ -1,5 +1,5 @@
-var book = require('./models/book');
-var article = require('./models/article');
+var Book = require('./models/book');
+var Article = require('./models/article');
 
 module.exports = function(app) {
 	//Server routes here
