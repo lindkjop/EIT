@@ -57,7 +57,7 @@ module.exports = function(app, router) {
 	//Api routes on /books/:books_id
 
 	//Get one specific book
-	app.get('/api/books/:id', function (request, response, next) {
+	app.get('/api/books/:book_id', function (request, response) {
 		Book.findById(request.params.book_id, function (err, book) {
 			if(err){
 				console.log('Something went wrong when retrieving the book with id: ' + request.params.book_id);
@@ -65,39 +65,45 @@ module.exports = function(app, router) {
 			} else {
 				console.log('Returning book with id: ' + request.params.book_id);
 			}
-
+			//console.log(book);
 			response.json(book);
-			//next();
+
 		});
 	});
 
 	//Update a books information
-	app.put('/api/books/:id', function (request, response) {
-		Book.findById(request.params.books_id, function (err, book) {
-			if(err)
+	app.put('/api/books/:book_id', function (request, response) {
+		Book.findById(request.params.book_id, function (err, book) {
+			if(err){
+				//console.log('Could not change title');
 				response.send(err);
-
-			book.title = request.body.title;
+			} else{
+				//console.log('Changed title from: ' + book.title + " to: " + request.body.title);
+				book.title = request.body.title;
+			}
 
 			book.save(function (err) {
-				if(err)
+				if(err){
 					response.send(err);
-
-				response.json({message: 'Book updated!'});
-			})
+				}
+				response.json({message: 'Book updated!'}, book);
+			});
 		});
 	});
 
 	//Delete a book
-
-	app.delete('/app/books/:id', function (request, response) {
+	app.delete('/api/books/:book_id', function (request, response) {
+		console.log('Trying to delete book');
 		Book.remove({
-			_id: request.params.books_id
+			_id: request.params.book_id
 		}, function (err, book) {
-			if(err)
+			if(err){
+				console.log('Something went wrong when deleting book with id: ' + request.params.book_id);
 				response.send(err);
-			response.json({message: 'Succesfully deleted'})
-		})
+			} else {
+				return response.json({message: 'Succesfully deleted'})
+			}
+		});
 	});
 
 	//Server routes here
