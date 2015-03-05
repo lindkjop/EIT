@@ -14,6 +14,7 @@ console.log('Connected to database:' + dbURI);
 
 //app.use(express.bodyParser());
 //app.use(bodyParser.json());
+//Are all of these really necessary? Need to check up on it
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override')); 
@@ -30,9 +31,9 @@ app.listen(port);
 //say that all routes shall start with /api
 app.use('/api', router);
 
-//configure routes
-require('./app/routes')(app, router);
-
 console.log('Magic happens on port ' + port);
 
 exports = module.exports = app;
+
+//configure routes
+require('./app/routes')(app, router);

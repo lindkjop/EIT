@@ -3,13 +3,14 @@ var Schema = mongoose.Schema;
 
 //Perhaps make ageGroup an enum?
 var bookSchema = new Schema({
-	//isbn: Number, 
+	isbn: Number, 
 	title: String,
-	//author: String,
-	//genre: String, 
-	//agegroup: String
+	author: String,
+	genre: String, 
+	agegroup: String
 	//Put in coverimage?
+	//Include a introduction to the book?
 });
 
-console.log('Creating book schema');
+//console.log('Creating book schema');
 module.exports = mongoose.model('Books', bookSchema);
