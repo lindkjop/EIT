@@ -3,26 +3,37 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser"); 
 var methodOverride = require("method-override");
+var mongoose = require('mongoose');
+mongoose.set('debug', true);
 
 //config
 
-var db = require('./config/db');
+var dbURI = 'mongodb://lesedyr:lesedyr@proximus.modulusmongo.net:27017/se5ganeP';
+mongoose.connect(dbURI);
+console.log('Connected to database:' + dbURI);
 
-var port = process.env.PORT || 8888;
-
-//Setting up express-application
-
-app.use(bodyParser.json());
+//app.use(express.bodyParser());
+//app.use(bodyParser.json());
+//Are all of these really necessary? Need to check up on it
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override')); 
 app.use(express.static(__dirname + '/public'));
 
-//configure routes
-require('./app/routes')(app);
+var port = process.env.PORT || 8888;
+var router = express.Router();
 
-console.log('Magic happens on port ' + port);
+
+//app.use(app.router);
 
 app.listen(port);
 
+//say that all routes shall start with /api
+app.use('/api', router);
+
+console.log('Magic happens on port ' + port);
+
 exports = module.exports = app;
+
+//configure routes
+require('./app/routes')(app, router);

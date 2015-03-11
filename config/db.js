@@ -1,3 +1,3 @@
 module.exports = {
-	url : 'mongodb://testuser:testuser@proximus.modulusmongo.net:27017/gazi3Sit'
+	url : 'mongodb://lesedyr:lesedyr@proximus.modulusmongo.net:27017/se5ganeP'
 }

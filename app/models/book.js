@@ -8,6 +8,9 @@ var bookSchema = new Schema({
 	author: String,
 	genre: String, 
 	agegroup: String
-})
+	//Put in coverimage?
+	//Include a introduction to the book?
+});
 
-module.exports = mongoose.model('Book', bookSchema);
+//console.log('Creating book schema');
+module.exports = mongoose.model('Books', bookSchema);

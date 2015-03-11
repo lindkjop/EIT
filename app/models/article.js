@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var articleSchema = new Schema({
 	title: String,
 	author: String,
+	ingress: String,
 	body: String,
 	//Should we have the possibility to comment artcles?
 	//comments: [{body: String, date: Date}],
