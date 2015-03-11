@@ -1,6 +1,5 @@
 var Book = require('./models/book');
 var Article = require('./models/article');
-var path = require('path');
 
 module.exports = function(app, router) {
 	//Middleroute - being called each time something happens - necessary?
@@ -42,18 +41,16 @@ module.exports = function(app, router) {
 	app.get('/api/books', function (request, response, next) {
 		//Logging
 		//console.log('Get call to get all books.');
-		response.sendFile('./404_server.html');
-
 		//Find book in database via mongoose
 		Book.find(function (err, books) {
 			//console.log('All books will be returned.');
-			
 			if(err){
-				response.sendFile(path.join('./404_server.html'));
+				console.log('Something went wrong when retrieving books');
+				response.send(err);
 			} else {
 				console.log('Returning books');	
 			}
-			//response.json(books);
+			response.json(books);
 		});	
 	});
 
