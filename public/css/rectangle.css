@@ -6,4 +6,32 @@
     background-color: #4cb0d0;  
 }
 
+.rectangle_grid{
+	width: 80%;
+    height: 130px;
+    position: absolute;
+    background-color: #FFFFFF; 
+}
 
+
+.container-fluid{
+	margin-top: 550px;
+	background-color: #edf3f4;
+	width: 80%;
+}
+
+.row{
+	margin-top: 20px;
+
+}
+
+.rounded_rectangle{
+	width: 200px;
+	height: 35px;
+	text-align: center;
+	padding: 10px;
+	background-color: #008bb6;
+	color: #FFFFFF;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
