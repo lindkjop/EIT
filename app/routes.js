@@ -107,10 +107,19 @@ module.exports = function(app, router) {
 	//Server routes here
 
 	//frontend routes
-	app.get('*', function(request, response){
-		response.sendfile('./public/views/index.html');
+	app.get('/magasin', function(request, response){
+		response.sendfile('./public/views/magazine.html');
 	});
-
+	app.get('/bøker', function(request, response){
+		response.sendfile('./public/views/books.html');
+	});
+	
+	app.get('favoritter', function(request, response){
+		response.sendfile('./public/views/favorites.html');
+	});
+	app.get('/omoss', function(request, response){
+		response.sendfile('./public/views/about.html');
+	});
 	app.get('*', function(request, response){
 		response.sendfile('./public/views/index.html');
 	});

@@ -2,11 +2,12 @@
 <html>
 
 <head>
+	<link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 <div ng-app="" >
-	<div ng-controller="showBooks">
+	<div ng-controller="booksController">
 		<button type="button" ng-click="getBooks()"> Get books! </button>
 		<ul>
        		<li ng-repeat="book in books"> book </li>

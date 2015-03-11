@@ -3,8 +3,8 @@
 //var app = angular.module('leseDyrApp', []);
 
 /** Bookcontroller **/
-//angular.module('showBooks'){
-function showBooks($scope, $http) {
+angular.module('leseDyrApp.controllers', []).
+controller('booksController', function ($scope, $http) {
 	//Check out ng-resource!
 	$scope.books = []
 
@@ -18,5 +18,4 @@ function showBooks($scope, $http) {
 		});
 	}
 
-}
-//}
+});
