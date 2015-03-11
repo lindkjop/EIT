@@ -1,7 +1,6 @@
 .navbar-custom {
   background-color:#3a3a3a;
     color:#c4d5db;
-    border-radius:0;
 }
 /* Not active */
 .navbar-custom .navbar-nav > li > a {
@@ -9,25 +8,30 @@
     padding-left:40px;
     padding-right:40px;
     
-    border-left-color:  #413c44;
+    border-left: 2px solid #000000;
+    font-weight: bold;
+
 }
-/* Active */
+
+/* Active *//*
 .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     color: #ffffff;
   background-color:transparent;
 }
+*/
 
-/* Hovering *//*
+/* Hovering */
 .navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
-    background-color: #66CCFF;
-}*/
+    background-color: transparent;
+}
       
 .navbar-custom .navbar-brand {
     color:#c4d5db;
     background-color: #c74f3d;
     padding-left:40px;
     padding-right:40px;
+    font-weight: bold;
 
 }
 .navbar-custom .navbar-toggle {
