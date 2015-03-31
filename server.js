@@ -1,39 +1,36 @@
-//modules
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser"); 
-var methodOverride = require("method-override");
-var mongoose = require('mongoose');
+// modules =================================================
+var express        = require('express');
+var app            = express();
+var mongoose       = require('mongoose');
+var bodyParser     = require('body-parser');
+var methodOverride = require('method-override');
 mongoose.set('debug', true);
-
-//config
+// configuration ===========================================
+	
+// config files
 
 var dbURI = 'mongodb://lesedyr:lesedyr@proximus.modulusmongo.net:27017/se5ganeP';
 mongoose.connect(dbURI);
 console.log('Connected to database:' + dbURI);
 
-//app.use(express.bodyParser());
-//app.use(bodyParser.json());
-//Are all of these really necessary? Need to check up on it
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride('X-HTTP-Method-Override')); 
-app.use(express.static(__dirname + '/public'));
+var port = process.env.PORT || 8888; // set our port
+// mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 
-var port = process.env.PORT || 8888;
+// get all data/stuff of the body (POST) parameters
+app.use(bodyParser.json()); // parse application/json 
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
+app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
+
+app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
+app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
+
+// routes ==================================================
 var router = express.Router();
 
+require('./app/routes')(app, router); // pass our application into our routes
 
-//app.use(app.router);
 
-app.listen(port);
-
-//say that all routes shall start with /api
-app.use('/api', router);
-
-console.log('Magic happens on port ' + port);
-
-exports = module.exports = app;
-
-//configure routes
-require('./app/routes')(app, router);
+// start app ===============================================
+app.listen(port);	
+console.log('Magic happens on port ' + port); 			// shoutout to the user
+exports = module.exports = app; 						// expose app

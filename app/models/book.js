@@ -1,4 +1,16 @@
+// grab the mongoose module
+/*var mongoose = require('mongoose');
+
+// define our nerd model
+// module.exports allows us to pass this to other files when it is called
+module.exports = mongoose.model('Nerd', {
+	name : {type : String, default: ''}
+});*/
+
+
+//Grab mongoose module
 var mongoose = require('mongoose');
+//Create mongoose schema
 var Schema = mongoose.Schema;
 
 //Perhaps make ageGroup an enum?
@@ -12,5 +24,4 @@ var bookSchema = new Schema({
 	//Include a introduction to the book?
 });
 
-//console.log('Creating book schema');
-module.exports = mongoose.model('Books', bookSchema);
+module.exports = mongoose.model('Book', bookSchema);
