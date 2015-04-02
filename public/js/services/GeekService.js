@@ -1,5 +1,3 @@
-angular.module('GeekService', []).factory('Geek', ['$http', function($http) {
-
-	
-
-}]);
+angular.module('BookService', []).factory("Book", function($resource) {
+	return $resource("/api/books/:books_id");
+});

@@ -1,73 +1,67 @@
 <script src="../libs/jquery/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="/../css/carousel.css" >
 <script src="../libs/bootstrap/js/carousel.js"></script>
 
-<div class= "rectangle" >
-    <div class= "rectangle_grid">
-        <div class= "rounded_rectangle">Våre nyeste anbefalinger:</div>
-		<div class="col-md-2 anbefalinger" ></div>
-		<div class="col-md-2 anbefalinger" ></div>
-		<div class="col-md-2 anbefalinger" ></div>
-		<div class="col-md-2 anbefalinger" ></div>
-		<div class="col-md-2 anbefalinger" ></div>
-		<div class="col-md-2 anbefalinger" style="border-right:0; "></div>
-    </div>
+<div class= "rectangle">
 
-    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-    	<!-- Indicators -->
+    <div class= "rectangle_grid" ng-model="book">
+
+          <div class= "rounded_rectangle">Våre nyeste anbefalinger:</div>
+         
+          <div class="col-md-2 anbefalinger"  ng-repeat="book in books | limitTo:5">{{book.title}}</div>
+    </div>
+    
+	
+
+    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000"  ng-model="article">
+    
+	    <!-- Indicators -->
 	    <ol class="carousel-indicators">
-		    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-		    <li data-target="#carousel" data-slide-to="1"></li>
-		    <li data-target="#carousel" data-slide-to="2"></li>
-		    <li data-target="#carousel" data-slide-to="3"></li>
+	      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+	      <li data-target="#carousel" data-slide-to="1" ></li>
+	      <li data-target="#carousel" data-slide-to="2"></li>
+	      <li data-target="#carousel" data-slide-to="3"></li>
 	    </ol>
 
 	    <!-- Wrapper for slides -->
 	    <div class="carousel-inner">
 
-	      	<div class="item active">
-	        	<div class="carousel-caption">
-	          		<h3>Hei1</h3>
-	        	</div>
-	      	</div>
+	      <div class="item active">
+	        <div class="carousel-caption">
+	          <h3>Hei1</h3>
+	        </div>
+	      </div>
 
-	      	<div class="item">
-	        	<div class="carousel-caption">
-	          		<h3>Hei2</h3>
-	        	</div>
-	      	</div>
+	      <div class="item">
+	        <div class="carousel-caption">
+	          <h3>Hei2</h3>
+	        </div>
+	      </div>
 	    
-	      	<div class="item">
-	        	<div class="carousel-caption">
-	          		<h3>Hei3</h3>
-	        	</div>
-	      	</div>
+	      <div class="item">
+	        <div class="carousel-caption">
+	          <h3>Hei3</h3>
+	        </div>
+	      </div>
 
-	      	<div class="item">
-	        	<div class="carousel-caption">
-	          		<h3>Hey4</h3>
-	        	</div>
-	      	</div>
+	      <div class="item">
+	        <div class="carousel-caption">
+	          <h3>Hey4</h3>
+	        </div>
+	      </div>
 
 	    </div>
 
 	</div>
+
 </div>
 
- <ul>
-    <li ng-repeat="article in articles">
-      <H2></H2>
-    </li>
-  </ul>
-
 <div class="container-fluid">
-    <div class="row" ng-model="article">
-        <div class="col-md-12" style="height: 200px; background-color: #4cb0d0;" ng-repeat="article in articles">{{ article.title }}</div>
+    <div class="row">
+        <div class="col-md-12" style="height: 200px; background-color: #4cb0d0;" ng-repeat="article in articles | limitTo:1">{{ article.title }}</div>
     </div>
 
     <div class="row">
         <div class="col-md-4" style="height: 200px; background-color: #4cb0d0; border-right: 15px solid #edf3f4;"></div>
-
         <div class="col-md-8" style="height: 200px; background-color: #4cb0d0;"></div>
     </div>
 
@@ -96,3 +90,5 @@
     </div>
 
 </div>
+
+
