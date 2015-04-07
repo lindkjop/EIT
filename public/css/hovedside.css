@@ -1,3 +1,4 @@
+/*Rectangle for the carousel*/
 .rectangle{
     width: 100%;
     height: 400px;
@@ -6,6 +7,7 @@
     background-color: #4cb0d0;  
 }
 
+/*Rectangle: recommended */
 .rectangle_grid{
 	width: 80%;
     height: 130px;
@@ -22,12 +24,13 @@
 	background-color: #edf3f4;
 	width: 80%;
 }
-
+/*
 .row{
 	margin-top: 20px;
 
 }
-
+*/
+/*Recommended banner*/
 .rounded_rectangle{
 	width: 200px;
 	height: 35px;
@@ -40,8 +43,8 @@
 	margin-top: -35px;
     margin-left: 35px;
 }
-
-.anbefalinger{
+/*For columns inside recommended*/
+.recommended{
 	height:85%; 
 	border-right: 3px solid #edf3f4;
 	top:10px; 

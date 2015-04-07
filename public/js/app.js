@@ -18,3 +18,21 @@ app.config(['$routeProvider', function ($routeProvider)
  // else 404 
  .otherwise("/404", {templateUrl: "partials/404.html", <span class="highlight">controller: "PageCtrl"</span>}); }]);
 Read more at http://www.airpair.com/angularjs/building-angularjs-app-tutorial#lDUUIZoLlsqoQteJ.99
+
+angular.module('carousel', ['ui.bootstrap']);
+function CarouselController($scope){
+  $scope.slides = [
+    {
+      text: 'aa'/*'http://lorempixel.com/400/200/'*/
+    },
+    {
+      text: 'bb'/*'http://lorempixel.com/400/200/food'*/
+    },
+    {
+      text: 'cc'/*'http://lorempixel.com/400/200/sports'*/
+    },
+    {
+      text: 'dd'/*'http://lorempixel.com/400/200/people'*/
+    }
+  ];
+}

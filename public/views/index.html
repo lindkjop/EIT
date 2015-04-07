@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html ng-app>
+<html>
 
  <head>
-  	<link rel="stylesheet" href="../css/rectangle.css" >
+  	<link rel="stylesheet" href="../css/hovedside.css" >
   	<link rel="stylesheet" href="../css/navbar.css" >
     <link rel="stylesheet" href="../css/carousel.css" >
     <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css">
@@ -21,30 +21,46 @@
 
           <div class= "rounded_rectangle">Våre nyeste anbefalinger:</div>
          
-          <div class="col-md-2 anbefalinger" ></div>
-          <div class="col-md-2 anbefalinger" ></div>
-          <div class="col-md-2 anbefalinger" ></div>
-          <div class="col-md-2 anbefalinger" ></div>
-          <div class="col-md-2 anbefalinger" ></div>
-          <div class="col-md-2 anbefalinger" style="border-right:0; "></div>
+          <div class="col-md-2 recommended" ></div>
+          <div class="col-md-2 recommended" ></div>
+          <div class="col-md-2 recommended" ></div>
+          <div class="col-md-2 recommended" ></div>
+          <div class="col-md-2 recommended" ></div>
+          <div class="col-md-2 recommended" style="border-right:0; "></div>
 
     </div>
 
+<!-- Using Angular for the carousel -Not working- -->
+ 	  <div ng-app="carousel">
+      <div ng-controller="CarouselController" id="slides_">
+        <div>
+            <carousel interval="5000">
+              <slide ng-repeat="slide in slides" active="slide.active">
+                <!-- <img ng-src="{{slide.image}}"> -->
 
-    
- 	
-    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-    
+                <div class="carousel-caption">
+                    <h4>{{slide.text}}</h4>
+                </div>
+              </slide>
+            </carousel>
+        </div>
+      </div>
+    </div>  
+
+<!-- Carousel -->
+<!--     <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+ -->    
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <!-- <ol class="carousel-indicators">
       <li data-target="#carousel" data-slide-to="0" class="active"></li>
       <li data-target="#carousel" data-slide-to="1"></li>
       <li data-target="#carousel" data-slide-to="2"></li>
       <li data-target="#carousel" data-slide-to="3"></li>
-    </ol>
+    </ol> -->
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    
+    <!-- <div class="carousel-inner" style="background-color: #000000; width:80%; left:10%;">
 
       <div class="item active">
         <div class="carousel-caption">
@@ -72,29 +88,24 @@
 
     </div>
 
-   </div>
+   </div> -->
  	</div>
-
+  
+  <!-- Navbar -->
  	<nav class="navbar navbar-custom" role="navigation" style="margin-top:90px; width:80%;  left: 10%;">
    	 <div class="container">
       
-      <!-- Brand and toggle get grouped for better mobile display -->
   		<div class="navbar-header">
-    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-     			<span class="sr-only">Toggle navigation</span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-    		</button>
+        <!-- Brand in navbar -->
     		<a class="navbar-brand" href="#">Lesedyr</a>
   		</div>
 
   		<ul class="nav navbar-nav">
-      		
+      		<!-- Link in navbar -->
       		<li><a href="#">Link</a></li>
     		</ul>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
+  <!-- Search function -->
   <div class="collapse navbar-collapse">
      <div class="col-md-3"> 
         <form class="navbar-form" role="search">
@@ -107,6 +118,7 @@
         </form>
     </div>
 
+    <!-- Links in navbar -->
     <ul class="nav navbar-nav">
       <li><a href="#">Link</a></li>
       <li><a href="#">Link</a></li>
@@ -115,42 +127,44 @@
       		</li>
     </ul>
 
-  	</div><!-- /.navbar-collapse -->
+  	</div>
  	</div>
 </nav>
 
+
 <div class="container-fluid">
+  <!-- First row -->
     <div class="row">
-        <div class="col-md-12" style="height: 200px; background-color: #4cb0d0;"></div>
+        <div class="col-md-12" style="height: 200px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
     </div>
-
+  <!-- Second row -->
     <div class="row">
-        <div class="col-md-4" style="height: 200px; background-color: #4cb0d0; border-right: 15px solid #edf3f4;"></div>
+        <div class="col-md-4" style="height: 200px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
 
-        <div class="col-md-8" style="height: 200px; background-color: #4cb0d0;"></div>
+        <div class="col-md-8" style="height: 200px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
     </div>
-
+  <!-- Third row -->
     <div class="row">
-      
-        <div class="col-md-8" style="height: 400px; background-color: #edf3f4; border-right: 15px solid #edf3f4;">
+        <!-- Three rows inside first column -->
+        <div class="col-md-8" style="height: 400px; background-color: #000000;">
 
-          <div class="row" style = "margin-top: 0px;">
-            <div class="col-md-12" style="height: 80px; background-color: #4cb0d0; "></div>
+          <div class="row">
+            <div class="col-md-12" style="height: 80px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
           </div>
 
           <div class="row">
-            <div class="col-md-4" style="height: 150px; background-color: #4cb0d0; border-right: 15px solid #edf3f4; "></div>
-            <div class="col-md-4" style="height: 150px; background-color: #4cb0d0; border-right: 15px solid #edf3f4; "></div>
-            <div class="col-md-4" style="height: 150px; background-color: #4cb0d0;  "></div>
+            <div class="col-md-4" style="height: 150px; background-color: #4cb0d0; border: 7px solid #edf3f4; "></div>
+            <div class="col-md-4" style="height: 150px; background-color: #4cb0d0; border: 7px solid #edf3f4; "></div>
+            <div class="col-md-4" style="height: 150px; background-color: #4cb0d0; border: 7px solid #edf3f4; "></div>
           </div>
 
           <div class="row">
-            <div class="col-md-12" style="height: 130px; background-color: #4cb0d0;"></div>
+            <div class="col-md-12" style="height: 170px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
           </div>
 
         </div>
-        
-        <div class="col-md-4" style="height: 400px; background-color: #4cb0d0;"></div>
+        <!-- Second column -->
+        <div class="col-md-4" style="height: 400px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
 
     </div>
 
@@ -161,6 +175,9 @@
 
 <script src="../libs/jquery/dist/jquery.min.js"></script>
 <script src="../libs/bootstrap/js/carousel.js"></script>
+<script src="../libs/angular/angular.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
  </body>	
 
 </html>
