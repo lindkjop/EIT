@@ -1,18 +1,56 @@
-<link rel="stylesheet" href="/../css/filterbuttons.css" >
+
 
 <!--Here I shall have filters to filter the books and something to show all books-->
-<span class="filter-buttons">
+<div class="filter-buttons">
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default btn-lg">0-3 år</button>
-  <button type="button" class="btn btn-default btn-lg">4-6 år</button>
-  <button type="button" class="btn btn-default btn-lg">7-10 år</button>
-  <button type="button" class="btn btn-default btn-lg">12+ år</button>
+  <button type="button" class="btn btn-default btn-xl">0-3 år</button>
+  <button type="button" class="btn btn-default btn-xl">4-6 år</button>
+  <button type="button" class="btn btn-default btn-xl">7-10 år</button>
+  <button type="button" class="btn btn-default btn-xl">12+ år</button>
 </div>
 
 <div class="btn-group" role="group" aria-label="some">
-  <button type="button" class="btn btn-default btn-lg">0-3 år</button>
-  <button type="button" class="btn btn-default btn-lg">4-6 år</button>
-  <button type="button" class="btn btn-default btn-lg">7-10 år</button>
-  <button type="button" class="btn btn-default btn-lg">12+ år</button>
+  <button type="button" class="btn btn-default btn-xl">Sorter på: </button>
+  <button type="button" class="btn btn-default btn-xl">Pris</button>
+  <button type="button" class="btn btn-default btn-xl">Popularitet</button>
+  <button type="button" class="btn btn-default btn-xl">Tid</button>
 </div>
-</span>
+</div>
+<div class="container" ng-model="book">
+	<div class="row" >
+		<div class="nametag">Name</div>
+		<div class="col-md-3"> 
+			Some text
+		</div>
+		<div class="col-md-3"> Some text</div>
+		<div class="col-md-3"> Some text</div>
+		<div class="col-md-3"> Some text</div>
+	</div>
+	<div class="row">
+		<div class="nametag">Name</div>
+		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
+	</div>
+	<div class="row">
+		<div class="nametag">Name</div>
+		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
+	</div>
+	<div class="row">
+		<div class="nametag">Name</div>
+		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
+	</div>
+	<div class="row">
+		<div class="nametag">Name</div>
+		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
+	</div>
+</div>
+<!--<div class="jumbotronWhite"> Some text
+</div>
+<div class="jumbotronWhite">Some text
+</div>
+<div class="jumbotronWhite">Some text
+</div>
+<div class="jumbotronWhite">Some text
+</div>
+<div class="jumbotronWhite">Some text
+</div>-->
+

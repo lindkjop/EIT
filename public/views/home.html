@@ -55,7 +55,7 @@
 
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-model="article">
     <div class="row">
         <div class="col-md-12" style="height: 200px; background-color: #4cb0d0;" ng-repeat="article in articles | limitTo:1">{{ article.title }}</div>
     </div>

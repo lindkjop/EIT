@@ -1,0 +1,40 @@
+.jumbotronWhite {
+ width: 20%;
+ height: 200px;
+ padding: 30px;
+ margin: -25px 0px 10px 50px;
+ font-size: 21px;
+ font-weight: 200;
+ line-height: 2.1428571435;
+ color: inherit;
+ background-color: white;
+}
+
+.box {
+	background-color: white;
+	width: 150px;
+	height: 215px;
+}
+.nametag {
+	width: 20%;
+	background-color: #A9E2F3;
+	border-radius: 5px;
+ 	height: 60px;
+ 	font-size: 21px;
+ 	font-weight: 200;
+ 	line-height: 2.1428571435;
+ 	margin: -25px 0px 10px 50px;
+}
+
+.bookdisplay {
+	float: right;
+	background-color: white;
+	width: 15%;
+	margin: 0px 0px 0px 60px;
+}
+.filterboxes {
+	float: left;
+}
+.books {
+	float: right;
+}
