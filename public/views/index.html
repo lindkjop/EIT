@@ -31,12 +31,12 @@
     </div>
 
 <!-- Using Angular for the carousel -Not working- -->
- 	  <div ng-app="carousel">
+ 	 <!--  <div ng-app="carousel">
       <div ng-controller="CarouselController" id="slides_">
         <div>
             <carousel interval="5000">
               <slide ng-repeat="slide in slides" active="slide.active">
-                <!-- <img ng-src="{{slide.image}}"> -->
+                <img ng-src="{{slide.image}}">
 
                 <div class="carousel-caption">
                     <h4>{{slide.text}}</h4>
@@ -45,22 +45,22 @@
             </carousel>
         </div>
       </div>
-    </div>  
+    </div>   -->
 
 <!-- Carousel -->
-<!--     <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
- -->    
+     <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+     
     <!-- Indicators -->
-    <!-- <ol class="carousel-indicators">
+    <ol class="carousel-indicators">
       <li data-target="#carousel" data-slide-to="0" class="active"></li>
       <li data-target="#carousel" data-slide-to="1"></li>
       <li data-target="#carousel" data-slide-to="2"></li>
       <li data-target="#carousel" data-slide-to="3"></li>
-    </ol> -->
+    </ol>
 
     <!-- Wrapper for slides -->
     
-    <!-- <div class="carousel-inner" style="background-color: #000000; width:80%; left:10%;">
+    <div class="carousel-inner" style="background-color: #000000; width:80%; left:10%;">
 
       <div class="item active">
         <div class="carousel-caption">
@@ -87,9 +87,9 @@
       </div>
 
     </div>
-
-   </div> -->
- 	</div>
+   </div> 
+ 	
+  </div>
   
   <!-- Navbar -->
  	<nav class="navbar navbar-custom" role="navigation" style="margin-top:90px; width:80%;  left: 10%;">
