@@ -1,5 +1,4 @@
-<script src="../libs/jquery/dist/jquery.min.js"></script>
-<script src="../libs/bootstrap/js/carousel.js"></script>
+
 
 <div class= "rectangle">
 
@@ -7,12 +6,12 @@
 
           <div class= "rounded_rectangle">Våre nyeste anbefalinger:</div>
          
-          <div class="col-md-2 anbefalinger"  ng-repeat="book in books | limitTo:5">{{book.title}}</div>
+          <div class="col-md-2 anbefalinger"  ng-repeat="book in books | limitTo:6">{{book.title}}</div>
     </div>
     
 	
 
-    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000"  ng-model="article">
+    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" >
     
 	    <!-- Indicators -->
 	    <ol class="carousel-indicators">
