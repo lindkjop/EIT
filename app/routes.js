@@ -22,6 +22,7 @@ module.exports = function(app, router) {
 			book.author = request.body.author;
 			book.genre = request.body.genre;
 			book.agegroup = request.body.agegroup;
+			book.price = request.body.price;
 
 			//Log messages
 			console.log("POST: ");
@@ -84,6 +85,7 @@ module.exports = function(app, router) {
 				book.author = request.body.author;
 				book.genre = request.body.genre;
 				book.agegroup = request.body.agegroup;
+				book.price = request.body.price;
 			}
 
 			book.save(function (err) {
@@ -185,6 +187,7 @@ module.exports = function(app, router) {
 				article.author = request.body.author;
 				article.ingress = request.body.ingress;
 				article.body = request.body.body;
+				
 			}
 
 			article.save(function (err) {

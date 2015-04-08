@@ -16,33 +16,38 @@
   <button type="button" class="btn btn-default btn-xl">Tid</button>
 </div>
 </div>
-<div class="container" ng-model="book">
-	<div class="row" >
-		<div class="nametag">Name</div>
-		<div class="col-md-3"> 
-			Some text
-		</div>
-		<div class="col-md-3"> Some text</div>
-		<div class="col-md-3"> Some text</div>
-		<div class="col-md-3"> Some text</div>
-	</div>
+
+
+<div class="filtercontainer" ng-model="book">
 	<div class="row">
-		<div class="nametag">Name</div>
+		<div class="nametag">Platform</div>
 		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
 	</div>
 	<div class="row">
-		<div class="nametag">Name</div>
+		<div class="nametag">Pris og lyd</div>
 		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
 	</div>
 	<div class="row">
-		<div class="nametag">Name</div>
+		<div class="nametag">Interaktivitet</div>
 		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
 	</div>
 	<div class="row">
-		<div class="nametag">Name</div>
+		<div class="nametag">Sjanger</div>
+		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
+	</div>
+	<div class="row">
+		<div class="nametag">Forfatter/forlag</div>
 		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
 	</div>
 </div>
+
+<div class="bookcontainer" ng-model="book">
+		<div class="book" ng-repeat="book in books | limitTo:6"> 
+			<div class="price"></div>
+			{{book.title}}
+		</div> 
+</div>	
+
 <!--<div class="jumbotronWhite"> Some text
 </div>
 <div class="jumbotronWhite">Some text

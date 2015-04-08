@@ -1,0 +1,23 @@
+.bookcontainer{
+	margin: -15px 0px 0px 7px;
+	width: 70%;
+	background-color: #edf3f4;
+	float:left;
+}
+
+.book{
+	margin: 10px 10px ;
+	width: 200px;
+	height: 280px;
+	float: left;
+	background-color: #FFFFFF;
+}
+
+.price{
+
+	margin: 0px 0px auto auto;
+	width: 35%;
+	height:12%;
+	border-bottom-left-radius: 20px;
+	background-color: #3a3a3a;
+}

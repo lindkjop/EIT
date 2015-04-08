@@ -19,7 +19,8 @@ var bookSchema = new Schema({
 	title: String,
 	author: String,
 	genre: String, 
-	agegroup: String
+	agegroup: String,
+	price: Number
 	//Put in coverimage?
 	//Include a introduction to the book?
 });
