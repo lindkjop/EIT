@@ -3,7 +3,7 @@
 <!--Here I shall have filters to filter the books and something to show all books-->
 <div class="filter-buttons">
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default btn-xl">0-3 år</button>
+  <button type="button" class="btn btn-default btn-xl" ng-click="filters.price = 100; filters.price = ''">0-3 år</button>
   <button type="button" class="btn btn-default btn-xl">4-6 år</button>
   <button type="button" class="btn btn-default btn-xl">7-10 år</button>
   <button type="button" class="btn btn-default btn-xl">12+ år</button>
@@ -11,7 +11,7 @@
 
 <div class="btn-group" role="group" aria-label="some">
   <button type="button" class="btn btn-default btn-xl">Sorter på: </button>
-  <button type="button" class="btn btn-default btn-xl">Pris</button>
+  <button type="button" class="btn btn-default btn-xl" ng-click="sortVariable = 'price'; reverse=!reverse">Pris</button>
   <button type="button" class="btn btn-default btn-xl">Popularitet</button>
   <button type="button" class="btn btn-default btn-xl">Tid</button>
 </div>
@@ -42,9 +42,11 @@
 </div>
 
 <div class="bookcontainer" ng-model="book">
-		<div class="book" ng-repeat="book in books | limitTo:6"> 
+		<div class="book" ng-repeat="book in books | limitTo:6 | orderBy:sortVariable:reverse | filter:filters "> 
 			<div class="price"></div>
 			{{book.title}}
+			{{book.price}}
+
 		</div> 
 </div>	
 
