@@ -9,11 +9,23 @@
           <div class="col-md-2 recommended"  ng-repeat="book in books | limitTo:6">{{book.title}}</div>
     </div>
     
-	
+<div ng-controller="MainController">
+  <div style="height: 305px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>
 
-    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" >
+    <!--<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" >
     
-	    <!-- Indicators -->
+	    <! - Indicators ->
 	    <ol class="carousel-indicators">
 	      <li data-target="#carousel" data-slide-to="0" class="active"></li>
 	      <li data-target="#carousel" data-slide-to="1" ></li>
@@ -21,7 +33,7 @@
 	      <li data-target="#carousel" data-slide-to="3"></li>
 	    </ol>
 
-	    <!-- Wrapper for slides -->
+	    <!- Wrapper for slides ->
 	    <div class="carousel-inner">
 
 	      <div class="item active">
@@ -50,7 +62,7 @@
 
 	    </div>
 
-	</div>
+	</div>-->
 
 </div>
 
