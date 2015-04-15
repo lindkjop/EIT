@@ -12,7 +12,7 @@
 <div class="btn-group" role="group" aria-label="some">
   <button type="button" class="btn btn-default btn-xl">Sorter på: </button>
   <button type="button" class="btn btn-default btn-xl" ng-click="sortVariable = 'price'; reverse=!reverse">Pris</button>
-  <button type="button" class="btn btn-default btn-xl">Popularitet</button>
+  <button type="button" class="btn btn-default btn-xl" ng-click="sortVariable = 'popularity'; reverse=!reverse">Popularitet</button>
   <button type="button" class="btn btn-default btn-xl">Tid</button>
 </div>
 </div>
@@ -21,7 +21,12 @@
 <div class="filtercontainer" ng-model="book">
 	<div class="row">
 		<div class="nametag">Platform</div>
-		<div class="jumbotronWhite" class="col-sm-1"> Some text</div>
+		<div class="jumbotronWhite" class="col-sm-1"> 
+			<div class="row">
+				<input type="checkbox" class="checkbox" name="checkbox5" ng-true-value="filters.price = 50;" ng-click="filtering()"/>
+				<label for="checkbox1">First Option default</label>
+			</div>
+		</div>
 	</div>
 	<div class="row">
 		<div class="nametag">Pris og lyd</div>
@@ -42,13 +47,36 @@
 </div>
 
 <div class="bookcontainer" ng-model="book">
-		<div class="book" ng-repeat="book in books | limitTo:6 | orderBy:sortVariable:reverse | filter:filters "> 
-			<div class="price"></div>
-			{{book.title}}
-			{{book.price}}
+		<div class="book" ng-repeat="book in books | limitTo:15 | orderBy:sortVariable:reverse | filter:filters "> 
+			<div class="picturecontainer">
+				<li><img src="../img/kubbe.png" alt="HTML5 Icon" style="width:70%; border-radius: 8px; margin-top: 14px; margin-left: 15px; "></li>
+			</div>
+			<div class="textcontainer">
+				 <div class="col-md-8">
+				 	{{book.title}}
+				 </div>
+
+				 <div class="col-md-4">
+				 	<li><img src="../img/hjerteFilled.png" alt="HTML5 Icon" style="width:100%; margin-top: -23px;"></li>
+				 </div>
+			</div>
+			<div class="pricecontainer">
+				<div class="col-md-8">
+					{{book.description}}
+				 </div>
+
+				 <div class="col-md-4">
+				 	{{book.price}}kr
+				 </div>
+			</div>
+			
+			
 
 		</div> 
 </div>	
+
+
+
 
 <!--<div class="jumbotronWhite"> Some text
 </div>

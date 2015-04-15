@@ -23,6 +23,8 @@ module.exports = function(app, router) {
 			book.genre = request.body.genre;
 			book.agegroup = request.body.agegroup;
 			book.price = request.body.price;
+			book.popularity = request.body.popularity;
+			book.description = request.body.description;
 
 			//Log messages
 			console.log("POST: ");
@@ -86,6 +88,9 @@ module.exports = function(app, router) {
 				book.genre = request.body.genre;
 				book.agegroup = request.body.agegroup;
 				book.price = request.body.price;
+				book.popularity = request.body.popularity;
+				book.description = request.body.description;
+
 			}
 
 			book.save(function (err) {
