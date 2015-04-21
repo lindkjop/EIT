@@ -2,6 +2,7 @@
 
 <div class= "rectangle">
 
+
     <div class= "rectangle_grid" ng-model="book">
 
           <div class= "rounded_rectangle">Våre nyeste anbefalinger:</div>
@@ -9,6 +10,9 @@
           <div class="col-md-2 recommended"  ng-repeat="book in books | limitTo:6">{{book.title}}</div>
     </div>
     
+	<li><img src="../img/karusell.png" alt="HTML5 Icon" style="width:70%; margin-left: 12% "></li>
+
+
 <div ng-controller="MainController">
   <div style="height: 305px">
     <carousel interval="myInterval">
@@ -22,6 +26,7 @@
     </carousel>
   </div>
 </div>
+
 
     <!--<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" >
     
@@ -67,16 +72,38 @@
 </div>
 
 <div class="container-fluid" ng-model="article">
-    <div class="row">
-        <div class="col-md-12" style="height: 200px; background-color: #4cb0d0; border: 7px solid #edf3f4;" ng-repeat="article in articles | limitTo:1">{{ article.title }}</div>
+    <div class="row" style='border: 7px solid #F0F0F0;'>
+        <div class="col-md-6" style="height: 300px; background-color: #FFFFFF;">
+
+        	<li><img src="../img/Easter-Eggs-12.jpg" alt="HTML5 Icon" style="width: 360px; height: 300px; margin-left: 18%;"></li>
+
+        </div>
+
+        <div class="col-md-6" style="height: 300px; background-color: #FFFFFF; padding:70px;" >
+
+        	<h4>Bok eller spill?</h4>
+        		Med så mange muligheter som interaktiv litteratur tilbyr kan det være vanskelig å sette et klart skille mellom hva man regner som bok, og hva man regner som spill. Interaktiv litteratur promoterer aktiv respons fra leseren på samme måte som spill gjør, og skillet mellom en spill-app og en bok-app trenger derfor ikke være like klart for alle. 
+
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-md-4" style="height: 200px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
-        <div class="col-md-8" style="height: 200px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
+        <div class="col-md-4" style="height: 200px; background-color: #4cb0d0; color: #000000; border: 7px solid #edf3f4; padding: 1.5% 3%;">
+        	<h4 style="color: #FFFFFF;">Et nytt medium, nye muligheter</h4>
+          		Men trenger man egentlig å lage et skille? Bøker og spill i tradisjonell forstand er to forskjellige underholdningsmedier, men interaktiv litteratur tilhører ingen av dem, selv om man finner spor av innflytelse fra begge parter. 
+          		&nbsp;
+          		<span style="font-style: italic; color: #FFD700">Les mer.</span>
+          	
+        </div>
+        <div class="col-md-8" style="height: 200px; background-color: #4cb0d0; color: #000000; border: 7px solid #edf3f4; padding: 1.5% 3%;">
+        	 <h4 style="color: #FFFFFF;">Hva kan interaktiv litteratur tilby som det tradisjonelle bokmediet ikke kan?</h4>
+          		Noe av det mest sentrale som skiller interaktiv litteratur fra sin forgjenger er forventningen om at man i større grad skal kunne interagere med teksten. Bildebøker tilbyr en begrenset form for interaskjon, gjennom bruk av stoffer man kan peke og føle på, eller ”pop-up” elementer. 
+          	<br></br>
+          	<p style="font-style: italic; color: #FFD700">Les mer.</p>
+        </div>
     </div>
 
-    <div class="row">
+ <!--    <div class="row">
       
         <div class="col-md-8" style="height: 400px; background-color: #edf3f4; ">
 
@@ -98,7 +125,7 @@
         
         <div class="col-md-4" style="height: 400px; background-color: #4cb0d0; border: 7px solid #edf3f4;"></div>
 
-    </div>
+    </div> -->
 
 </div>
 
